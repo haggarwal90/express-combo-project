@@ -121,6 +121,7 @@ angular.module("salesApp", ['ngRoute'])
     .controller('salesAttrMapper', function ($rootScope, $scope) {
 
         var objMapp = $rootScope.objMap;
+
         //var objMapp = JSON.parse(sessionStorage.objMap);
 
         //console.log('$rootScope.objMap '+ JSON.stringify(objMapp));

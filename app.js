@@ -30,6 +30,9 @@ app.set('views', path.join(__dirname, 'public'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+app.use('/js',express.static(path.join(__dirname, 'public/js')));
+app.use('/js',express.static(path.join(__dirname, 'node_modules/angular-route')));
+app.use('/js',express.static(path.join(__dirname, 'node_modules/angular')));
 app.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
 app.use('/css',express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 app.use(express.static(path.join(__dirname, 'public')));
