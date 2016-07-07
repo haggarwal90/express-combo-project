@@ -1,0 +1,819 @@
+html
+{ height: 100%;}
+
+*
+{ margin: 0;
+    padding: 0;}
+
+body
+{ font: normal 85% Arial;
+    font-size:12px;
+    color: #2C3539;
+}
+
+p
+{ padding: 0 0 10px 0;
+    line-height: 1.7em;
+    font-size: 100% }
+
+img
+{ border: 0;}
+
+h1, h2, h3, h4, h5, h6
+{ font: Arial;
+    color: #4682B4;
+    text-align:left;
+    padding: 6px 1px 1px 1px;
+
+
+}
+
+h2
+{ font: normal 165% Arial, Helvetica, sans-serif;}
+
+h3
+{ font: normal 130% Arial, Helvetica, sans-serif;
+}
+
+a
+{ color: #FFF;
+    font-weight: bold;
+    background: transparent;
+    outline: none;
+    text-decoration: underline;}
+
+a:hover
+{ text-decoration: none;}
+
+ul
+{ margin: 2px 0 22px 30px;
+    line-height: 1.7em;
+    font-style: normal;
+    font-size: 100%;}
+
+ol
+{ margin: 8px 0 22px 20px;}
+
+ol li
+{ margin: 0 0 11px 0;}
+
+#main, #header, #banner, #menubar, #site_content, #footer, #content_blue
+{ margin-left: auto;
+    margin-right: auto;}
+
+#main
+{ background: transparent;}
+
+#menubar
+{ width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    border-bottom-color:rgb(216, 216, 216);
+    border-bottom-width:3 px ;
+    border-bottom-style: solid;
+
+}
+
+#welcome
+{ width: 360px;
+    float: left;
+    text-align:left;
+    height: 45px;
+    margin-bottom: 5px;
+
+    background: transparent;
+    padding: 1px 10px 3px 10px;
+
+
+}
+
+#welcome h1 a
+{ font: normal 150% Arial, Helvetica, sans-serif;
+    letter-spacing: -3px;
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: 1px 1px #000;  }
+
+#menu_items
+{ float: right;
+    width: 560px;}
+
+ul#menu
+{ margin:0;
+    float: right;}
+
+ul#menu li
+{ padding: 0 0 0 0px;
+    list-style: none;
+    margin: 2px 0 0 0;
+    display: inline;
+    background: transparent;}
+
+ul#menu li a
+{ float: left;
+    font: bold 120% Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+    height: 24px;
+    text-shadow: 1px 1px #000;
+    padding: 16px 15px 10px 15px;
+    background: transparent; }
+
+ul#menu li.current a, ul#menu li:hover a
+{ color: #C56B85;
+    text-shadow: 1px 1px #000;}
+
+#site_content
+{ width:100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.sidebar_container
+{ float: left;
+    margin-right: 20px;
+    width: 219px;
+    padding: 0;
+    border-right-color:rgb(216, 216, 216);
+    border-right-width:1px ;
+    border-right-style: solid;
+    height:429px;
+
+}
+
+.breadcrummb
+{
+    float:left;
+    width:98%;
+    height:25px;
+    border-bottom-color:rgb(216, 216, 216);
+    border-bottom-width:1px ;
+    border-bottom-style: solid;
+    padding: 1px 10px 3px 10px;
+
+
+
+}
+
+.sidebar
+{ float: left;
+    width: 200px;
+    margin-bottom: 3 px;
+    padding: 10px 10px 3px 10px;
+    border-bottom-color:rgb(216, 216, 216);
+    border-bottom-width:1px ;
+    border-bottom-style: solid;
+
+}
+
+.sidebar_item
+{ font: normal 100% Arial, Helvetica, sans-serif;
+    width: 215px;
+
+    float: left;
+
+
+
+}
+
+.sidebar h2
+{
+    padding: 1px 0 0 10px;
+    font: Arial;
+    height: 15 px;
+    color:#000000;
+    border-bottom-color:rgb(216, 216, 216);
+    border-bottom-width:1px ;
+    border-style: solid;
+
+}
+.leftside
+{
+
+    font: Arial;
+    height:inherit;
+    color:#4682B4;
+    float:left;
+    width:97%;
+    padding: 6px 1px 1px 1px;
+
+
+}
+#content
+{ width: 1100px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    float: left;
+}
+
+.content_item
+{ width: 100%;
+    margin-bottom: 20px;}
+
+.content_container
+{ width: 320px;
+    padding: 5px;
+    margin-right: 10px;
+    float: left;}
+
+#content_blue
+{ width: 1100px;
+    height:inherit;
+    float: left;
+    text-align: center; }
+
+#content_blue p
+{
+    border-bottom: 1px solid #E8E8E8 ;
+    height:10px;
+    float:left;
+    width:100%;
+
+}
+.full
+{
+    border-bottom: 1px solid #E8E8E8 ;
+    height:inherit;
+    float:left;
+    width:100%;
+    text-align:left;
+
+}
+.textboxdiv
+{
+    height:inherit;
+    float:left;
+    width:98%;
+    text-align:left;
+
+
+
+
+
+}
+.textboxfirst
+{
+    width:10%;
+    height:inherit;
+    float: left;
+
+    font-weight: bold;
+    margin-top:2%;
+
+
+
+
+}
+
+.textboxsecond {
+    border:1px solid #E8E8E8;
+    border-radius:5px;
+    height: 38px;
+    width: 100%;
+    float:left;
+
+}
+.first
+{
+    width:32%;
+    height:inherit;
+    float: left;
+
+    font-weight: bold;
+    border-right: 1px solid #E8E8E8 ;
+    padding: 10px 1px 10px 10px;
+}
+.second
+{
+    width:63%;
+    height:inherit;
+
+    float: left;
+
+    padding: 10px 1px 10px 10px;
+
+}
+
+.content_blue_container_box
+{
+    width: 480px;
+    text-align: center;
+    margin: 20px 20px 10px 0;
+    float: left;
+    border-radius: 14px;
+    border: 1px solid #cccccc;
+    height:inherit;
+
+}
+.outerbox
+{
+    width: 480px;
+
+    text-align: center;
+    margin: 20px 20px 10px 0;
+    float: left;
+
+    height:inherit;
+
+}
+.content_blue_container_boxl
+{ width: 280px;
+    padding: 10px 5px 15px 5px;
+    text-align: center;
+    margin: 20px 0 10px 0;
+    float: left;
+    background: #621B45;
+    background: -moz-linear-gradient(#C56B85, #381029);
+    background: -o-linear-gradient(#C56B85, #381029);
+    background: -webkit-linear-gradient(#C56B85, #381029);
+    border-radius: 0px 15px 0px 15px;
+    -moz-border-radius: 0px 15px 0px 15px;
+    -webkit-border: 0px 15px 0px 15px;}
+
+#footer
+{ width: 960px;
+    height: 20px;
+    padding-top: 20px;
+    text-align: center;
+    background: transparent;
+    color: #FFF;
+    text-shadow: 0px 1px 0px #000;}
+
+#footer a, #footer a:hover
+{ color: #FFF;
+    text-shadow: 0px 1px 0px #000;
+    text-decoration: none;
+    padding-bottom: 20px;}
+
+#footer a:hover
+{ text-decoration: underline;}
+
+.readmore
+{ font: bold 110% Arial, Helvetica, sans-serif;
+    height: 15px;
+    float:right;
+    width: 70px;
+    padding: 5px 5px 10px 5px;
+    background: #4682B4;
+    text-align:center;
+
+
+
+}
+.save
+{
+
+    font: bold 110% Arial, Helvetica, sans-serif;
+    height: 25px;
+    float:left;
+    width: 70px;
+    background: #4682B4;
+    text-align:center;
+    text-decoration:none;
+    padding-top:5px
+}
+.savenext
+{
+
+    font: bold 110% Arial, Helvetica, sans-serif;
+    height: 25px;
+    float:left;
+    width: 120px;
+    background: #4682B4;
+    text-align:center;
+    text-decoration:none;
+    padding-top:5px
+}
+.testconnectiondiv
+{
+
+    height: 18px;
+    float:left;
+    width: 25%;
+    padding: 0px 5px 10px 100px;
+    margin-left:10%;
+
+
+
+}
+
+.otherdiv
+{
+    height: 18px;
+    float:left;
+    width: 35%;
+    padding: 0px 5px 30px 5px;
+    text-decoration:none;
+    margin-left:6%;
+
+
+}
+.otherdiv1
+{
+    height: 18px;
+    float:left;
+    width: 35%;
+    padding: 0px 5px 10px 2px;
+    text-decoration:none;
+
+
+
+}
+.testconnection
+{
+    font: bold 110% Arial, Helvetica, sans-serif;
+
+    padding: 5px 5px 10px 5px;
+    background: #cccccc;
+    text-align:center;
+    text-decoration:none;
+    width:150px;
+    float:left;
+    height:inherit;
+
+}
+.testconnection1
+{
+    font: bold 110% Arial, Helvetica, sans-serif;
+    background: #cccccc;
+    text-align:center;
+    text-decoration:none;
+    width:22%;
+    float:left;
+    height:25px;
+    margin-left:6%;
+    padding-top:5px
+
+}
+#content_blue h4
+{
+    width:70%;
+    float:left;
+    height:10%;
+
+
+
+}
+.readmore a
+{ color: #ffffff;
+    text-decoration:none;
+
+}
+
+
+.button_small
+{ font: normal 110% Arial, Helvetica, sans-serif;
+    height: 15px;
+    width: 90px;
+    padding: 5px 5px 10px 7px;
+    background: #621B45;
+    background: -moz-linear-gradient(#C56B85, #381029);
+    background: -o-linear-gradient(#C56B85, #381029);
+    background: -webkit-linear-gradient(#C56B85, #381029);
+    border-radius: 0px 15px 0px 15px;
+    -moz-border-radius: 0px 15px 0px 15px;
+    -webkit-border: 0px 15px 0px 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}
+
+.button_small a
+{ color: #FFF;
+    padding-left: 5px;}
+
+.form_settings
+{ margin: 15px 0 0 0;}
+
+.form_settings p
+{ padding: 0 0 4px 0;}
+
+.form_settings span
+{ float: left;
+    width: 280px;
+    text-align: left;}
+
+.form_settings input, .form_settings textarea
+{ padding: 2px;
+    width: 299px;
+    font: 100% arial;
+    border: 1px solid #BBB;
+    background: #FFF;
+    color: #47433F;}
+
+.form_settings input[type="checkbox"]
+{ padding: 2px 0;
+    width: 15px;
+    font: 100% arial;
+    border: 0;
+    background: #FFF;
+    color: #47433F;
+    margin: 28px 0;}
+
+.form_settings .submit
+{ font: bold 100% arial;
+    width: 99px;
+    margin: 0 0 0 206px;
+    height: 26px;
+    padding: 2px 0 3px 0;
+    cursor: pointer;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #ccc);
+    background: -o-linear-gradient(#fff, #ccc);
+    background: -webkit-linear-gradient(#fff, #ccc);
+    border-radius: 0px 15px 0px 15px;
+    -moz-border-radius: 0px 15px 0px 15px;
+    -webkit-border: 0px 15px 0px 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    color: #000;}
+
+
+#banner_image {
+    width: 100%;
+    height:inherit;
+    float: left;
+    margin: 20px 0 0 0;
+    padding: 0 0 0 0;
+}
+#slider-wrapper {
+    height: 400px;
+    background: transparent;
+    width: 920px;
+}
+#slider {
+    background: url("../images/loading.gif") no-repeat scroll 50% 50% transparent;
+    height: 400px;
+    position: relative;
+    width: 920px;
+}
+#slider img {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+#slider a {
+    border: 0 none;
+    display: block;
+}
+
+.nivoSlider {
+    position: relative;
+}
+.nivoSlider img {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.nivoSlider a.nivo-imageLink {
+    border: 0 none;
+    display: none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 6;
+}
+.nivo-slice {
+    display: block;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+}
+.nivo-box {
+    display: block;
+    position: absolute;
+    z-index: 5;
+}
+.nivo-caption {
+    background: none repeat scroll 0 0 #000000;
+    bottom: 0;
+    color: #FFFFFF;
+    font-family: arial;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 8;
+}
+.nivo-caption p {
+    margin: 0;
+    padding: 5px;
+}
+.nivo-caption a {
+    color: red;
+    display: inline !important;
+    text-decoration: none;
+}
+.nivo-caption a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+.nivo-html-caption {
+    display: none;
+}
+.nivo-directionNav a {
+    background: url("../images/arrows.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 45%;
+    width: 30px;
+    z-index: 9;
+}
+a.nivo-prevNav {
+    left: 15px;
+}
+a.nivo-nextNav {
+    background-position: -30px 50%;
+    right: 15px;
+}
+.nivo-controlNav {
+    bottom: -30px;
+    left: 50%;
+    margin-left: -40px;
+    position: absolute;
+}
+.nivo-controlNav a {
+    background: url("../images/bullets.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: left;
+    height: 22px;
+    margin-top: 350px;
+    position: relative;
+    text-indent: -9999px;
+    width: 22px;
+    z-index: 9;
+}
+.nivo-controlNav a.active {
+    background-position: 0 -22px;
+}
+.background
+{
+    background-color:#E0E0E0 ;
+}
+.margin
+{
+    padding: 2px 8px 1px 0;
+}
+.margin-top
+{
+    margin-top:1%;
+
+}
+.margin-top2
+{
+    margin-top:2%;
+
+}
+
+/*custom font*/
+
+.breadcrumb {
+    /*centering*/
+    display: inline-block;
+
+    overflow: hidden;
+
+    /*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
+    counter-reset: flag;
+    float:left;
+    width:100%;
+    height:inherit;
+    margin-bottom:2%;
+
+
+
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    float: left;
+    font-size: 12px;
+    color:#989898;
+
+    line-height: 36px;
+
+    /*need more margin on the left of links to accomodate the numbers*/
+    padding: 0 10px 0 60px;
+    background: #fff;
+
+    position: relative;
+    margin-left:2%;
+}
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.breadcrumb a:first-child {
+    padding-left: 46px;
+
+
+}
+.breadcrumb a:first-child:before {
+    left: 14px;
+
+}
+.breadcrumb a:last-child {
+
+    padding-right: 20px;
+}
+
+/*hover/active styles*/
+.breadcrumb a.active, .breadcrumb a:hover{
+
+    /*active menu*/
+    background: #606060 ;
+    color:#E8E8E8;
+
+}
+.breadcrumb a.active:after, .breadcrumb a:hover:after {
+    background: #606060 ;
+
+}
+
+/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+.breadcrumb a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -18px; /*half of square's length*/
+    /*same dimension as the line-height of .breadcrumb a */
+    width: 36px;
+    height: 36px;
+    /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's:
+    length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+    if diagonal required = 1; length = 1/1.414 = 0.707*/
+    transform: scale(0.707) rotate(45deg);
+    /*we need to prevent the arrows from getting buried under the next link*/
+    z-index: 1;
+    /*background same as links but the gradient will be rotated to compensate with the transform applied*/
+    background: #fff;
+
+    /*stylish arrow design using box shadow*/
+
+    /*
+        5px - for rounded arrows and
+        50px - to prevent hover glitches on the border created using shadows*/
+    border-radius: 0 5px 0 50px;
+}
+/*we dont need an arrow after the last link*/
+.breadcrumb a:last-child:after {
+    content: none;
+}
+/*we will use the :before element to show numbers*/
+.breadcrumb a:before {
+    content: counter(flag);
+    counter-increment: flag;
+    /*some styles now*/
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 8px 0;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    /*for round mark*/
+    background: #84C6E1;
+    color:#ffffff;
+    font-weight: bold;
+}
+
+/*for adding style only in active menu*/
+.breadcrumb a.active:before{
+
+    background: #DFF5FE;
+    color:#84C6E1;
+}
+
+.flat a, .flat a:after {
+    background: white;
+    color: black;
+    transition: all 0.5s;
+}
+.flat a:before {
+    background: white;
+
+
+}
+.flat a:hover, .flat a.active,
+.flat a:hover:after, .flat a.active:after{
+    background: #9EEB62;
+}
+
+.inputwidth {
+    width : 100%
+}
+
+
+
+
+

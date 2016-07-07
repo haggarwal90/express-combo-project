@@ -1,0 +1,40 @@
+<div style="width:960px;margin-left:auto;margin-right:auto;">
+
+    <div class="row">
+        <div class="col-md-6" style="padding-left: 30px;">
+            <h3 style="color:#014c8c;">Mongo Objects</h3>
+        </div>
+        <div class="col-md-6">
+            <h3 style="color:#014c8c;">Sales Objects</h3>
+        </div>
+    </div>
+            <div class="col-md-12">
+            <div class="row" ng-repeat="eModel in objMap">
+                <div class="col-md-6">
+                        <span>{{eModel.mongoObjects}}</span>
+                </div>
+                <div class="col-md-6">
+                        <span>{{eModel.salesObjects}}</span>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select  name="repeatMongoSelect" id="repeatMongoSelect" ng-model="selectedMongoObject" multiple>
+                            <option  ng-repeat="option1 in mongoObjects" value="{{option1}}">{{option1}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select name="repeatSalesSelect" id="repeatSalesSelect" ng-model="selectedSalesObject" multiple>
+                            <option ng-repeat="option2 in salesObjects" value="{{option2}}">{{option2}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    <div style="padding-left: 15px;">
+        <button  ng-click="saveObjMapping()">Save</button> <br>
+
+        <a href="#/attributemapping">Proceed to attribute mapping</a>
+    </div>
+
+
+</div>

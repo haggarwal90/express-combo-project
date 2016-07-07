@@ -1,0 +1,27 @@
+{
+  "name": "express-sales",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "angular": "^1.4.6",
+    "angular-route": "^1.4.6",
+    "body-parser": "~1.15.1",
+    "bootstrap": "^3.3.6",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "^2.4.2",
+    "express": "~4.13.4",
+    "html": "0.0.10",
+    "jade": "~1.11.0",
+    "lodash": "^4.13.1",
+    "mongoose": "^4.5.2",
+    "morgan": "~1.7.0",
+    "node-salesforce": "^0.8.0",
+    "q": "^1.4.1",
+    "serve-favicon": "~2.3.0",
+    "soap": "^0.16.0"
+  }
+}
