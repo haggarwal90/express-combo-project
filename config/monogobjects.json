@@ -1,10 +1,5 @@
 {
-  "MAddress" : "5732fcee8be326d006b14766",
-  "MAccount" : "5732fcee8be326d006b14766",
-  "MLicense" : "5732fcee8be326d006b14766",
-  "MProduct" : "5732fcee8be326d006b14766",
-  "MUser" : "5732fcee8be326d006b14766",
-  "MTask" : "5732fcee8be326d006b14766",
-  "MRecordType" : "5732fcee8be326d006b14766",
-  "MOrder" : "5732fcee8be326d006b14766"
+  "AppUser" : "5728803d336cb54825c87d2b",
+  "Account" : "57287b1a987d950c139268db",
+  "AccessToken" : "WssLCAZBwXmVJ5PVqksfj9lgvGxFE7e8CJWroyUZz2tYFk8qcCOSxu70RqBzYH88"
 }

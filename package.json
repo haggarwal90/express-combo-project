@@ -17,6 +17,7 @@
     "html": "0.0.10",
     "jade": "~1.11.0",
     "lodash": "^4.13.1",
+    "mongodb": "^2.1.18",
     "mongoose": "^4.5.2",
     "morgan": "~1.7.0",
     "node-salesforce": "^0.8.0",
