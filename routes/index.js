@@ -39,4 +39,19 @@ router.get('/config', function(req, res, next) {
   res.status(200).send(sfconfig);
 });
 
+router.post('/attributes', function(req, res, next) {
+  var objMap = req.body;
+  /*router.get('/config').then(function(responce) {
+    console.log('mongoConfig is'+ JSON.stringify(responce));
+  });*/
+  var mongoObj = res.app.get('mongoObj');
+  for (var obj = 0; obj < objMap.length; obj++) {
+    var salesAtr = obj.salesObjects[0];
+    var mongoAtr = obj.mongoObjects[0];
+    mongoObj[mongoAtr]
+  }
+  res.status(200).send(objMap);
+});
+
+
 module.exports = router;

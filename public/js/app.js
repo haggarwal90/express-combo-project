@@ -124,7 +124,9 @@ angular.module("salesApp", ['ngRoute'])
 
         //var objMapp = JSON.parse(sessionStorage.objMap);
 
-        //console.log('$rootScope.objMap '+ JSON.stringify(objMapp));
+        console.log('$rootScope.objMap '+ JSON.stringify(objMapp));
+
+
 
     })
 
