@@ -10,20 +10,42 @@
         </div>
         <!--<div style="clear:both"></div>-->
     </div>
-    <div class="row" ng-repeat="eModel in objMap">
+    <div class="row" ng-repeat="eModel in objWithAtr">
 
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
                 <tr>
-                    <td>{{eModel.mongoObjects[0]}}</td>
-                    <td>{{eModel.salesObjects[0]}}</td>
+                    <th>{{eModel.mongoObjects[0]}}</th>
+                    <th>{{eModel.salesObjects[0]}}</th>
+                </tr>
+                <tr>
+                    <div class="row">
+                        <td>
+                            <div class="col-md-6">
+                                <select  name="mongoAtrSelect" id="mongoAtrSelect" ng-model="selectedMongoAtr" multiple>
+                                    <option  ng-repeat="option1 in eModel.mongoAttributes" value="{{option1}}">{{option1}}</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col-md-6">
+                                <select name="salesAtrSelect" id="salesAtrSelect" ng-model="selectedSalesAtr" multiple>
+                                    <option ng-repeat="option2 in eModel.salesAttributes" value="{{option2}}">{{option2}}</option>
+                                </select>
+                            </div>
+                        </td>
+                     </div>
+                </tr>
+                <tr>
+                    <td>
+                        <!--<div class="row" style="padding-left: 15px;margin-top: -19px;margin-bottom:  19px;">-->
+                            <!--<a href="#/objectattributemapping">Configure attribute mapping</a>-->
+                            <button ng-click="saveObjAtrMapping()">Save attribute mapping</button> <br>
+                        <!--</div>-->
+                    </td>
                 </tr>
             </table>
         </div>
-        <div class="row" style="padding-left: 15px;margin-top: -19px;margin-bottom:  19px;">
-            <!--<a href="#/objectattributemapping">Configure attribute mapping</a>-->
-            <button >Configure attribute mapping</button> <br>
-        </div>
-
     </div>
+    <button ng-click="saveFinalMapping()">Save to DB</button> <br>
 </div>

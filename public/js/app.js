@@ -99,6 +99,24 @@ angular.module("salesApp", ['ngRoute'])
                     });
                 return deferred.promise;
 
+            },
+            mapObjAttrs: function (obj) {
+                var deferred = $q.defer();
+                var uri = "/api/attributes/" ;
+                return $http({
+                    method: 'POST',
+                    url: uri,
+                    data: obj,
+                    headers: {'Content-Type': 'application/json'}
+                }).success(function (responce) { // responce : { data : {} , status,cpnfig,headers }
+                        //console.log('r is ' + responce);
+                        deferred.resolve(responce);
+                    })
+                    .error(function (msg, code) {
+                        deferred.reject(msg);
+                    });
+                return deferred.promise;
+
             }
         }
     })
@@ -161,6 +179,26 @@ angular.module("salesApp", ['ngRoute'])
     .controller('salesAttrMapper', function ($rootScope, $scope, $q, expresSales) {
 
         var objMapp = $rootScope.objMap;
+        $scope.saveObjAtrMapping = function () {
+            console.log('called saveObjAtrMapping');
+            /*var temp = {};
+            temp.salesObjects = $scope.selectedSalesObject;
+            temp.mongoObjects = $scope.selectedMongoObject;
+            console.log($scope.objMap);
+            $rootScope.objMap.push(temp);
+            sessionStorage.objMap = JSON.stringify($rootScope.objMap);
+            console.log('sessionStorage3.objMap ' + sessionStorage.objMap);*/
+        }
+        $scope.saveFinalMapping = function () {
+            console.log('called saveFinalMapping');
+            /*var temp = {};
+             temp.salesObjects = $scope.selectedSalesObject;
+             temp.mongoObjects = $scope.selectedMongoObject;
+             console.log($scope.objMap);
+             $rootScope.objMap.push(temp);
+             sessionStorage.objMap = JSON.stringify($rootScope.objMap);
+             console.log('sessionStorage3.objMap ' + sessionStorage.objMap);*/
+        }
 
         /*for (var i = 0; i < objMapp.length; i++) {
             var temp = objMapp[i];
@@ -191,6 +229,12 @@ angular.module("salesApp", ['ngRoute'])
         //var objMapp = JSON.parse(sessionStorage.objMap);
 
         console.log('$rootScope.objMap '+ JSON.stringify(objMapp));
+        expresSales.mapObjAttrs(objMapp).then(function(data) {
+            console.log('data isss '+JSON.stringify(data))
+            $scope.objWithAtr = data.data;
+        }, function (error) {
+            console.log(error);
+        })
 
 
 
