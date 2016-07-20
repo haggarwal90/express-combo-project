@@ -25,7 +25,7 @@ angular.module("salesApp", ['ngRoute'])
         return {
             salesObj: function () {
                 var deferred = $q.defer();
-                return $http.get("/api/salesObject").
+                return $http.get("/api/salesObjects").
                     success(function (responce) { // responce : { data : {} , status,cpnfig,headers }
                         //console.log('r is ' + responce);
                         deferred.resolve(responce);
@@ -38,7 +38,19 @@ angular.module("salesApp", ['ngRoute'])
             },
             mongoObj: function () {
                 var deferred = $q.defer();
-                return $http.get("/api/mongoObject")
+                return $http.get("/api/mongoObjects")
+                    .success(function (data) {
+                        deferred.resolve(data);
+                    })
+                    .error(function (msg, code) {
+                        deferred.reject(msg)
+                    })
+                return deferred.promise;
+
+            },
+            mongoObjId: function () {
+                var deferred = $q.defer();
+                return $http.get("/api/mongoObjectsIds")
                     .success(function (data) {
                         deferred.resolve(data);
                     })
@@ -59,6 +71,34 @@ angular.module("salesApp", ['ngRoute'])
                         deferred.reject(msg);
                     });
                 return deferred.promise;
+            },
+            salesObjAttr: function (objName) {
+                var deferred = $q.defer();
+                var uri = "/api/salesObjects/" + objName + "/attributes";
+                return $http.get(uri).
+                    success(function (responce) { // responce : { data : {} , status,cpnfig,headers }
+                        //console.log('r is ' + responce);
+                        deferred.resolve(responce);
+                    })
+                    .error(function (msg, code) {
+                        deferred.reject(msg);
+                    });
+                return deferred.promise;
+
+            },
+            mongoObjAttr: function (objName, objId) {
+                var deferred = $q.defer();
+                var uri = "/api/mongoObjects/" + objName + "/" + objId;
+                return $http.get(uri).
+                    success(function (responce) { // responce : { data : {} , status,cpnfig,headers }
+                        //console.log('r is ' + responce);
+                        deferred.resolve(responce);
+                    })
+                    .error(function (msg, code) {
+                        deferred.reject(msg);
+                    });
+                return deferred.promise;
+
             }
         }
     })
@@ -92,15 +132,15 @@ angular.module("salesApp", ['ngRoute'])
          console.log(error);
          })*/
         //$rootScope.objMap = [];
-        console.log('sessionStorage1.objMap '+sessionStorage.objMap);
-        if(sessionStorage.objMap) {
-            console.log('sessionStorage2.objMap '+sessionStorage.objMap);
+        console.log('sessionStorage1.objMap ' + sessionStorage.objMap);
+        if (sessionStorage.objMap) {
+            console.log('sessionStorage2.objMap ' + sessionStorage.objMap);
             var t = JSON.parse(sessionStorage.objMap)
             /*for(var i = 0; i<t.length; i++) {
-                $rootScope.objMap.push(t[i]);
-            }*/
+             $rootScope.objMap.push(t[i]);
+             }*/
             $rootScope.objMap = t;
-            console.log('$rootScope.objMap '+$rootScope.objMap);
+            console.log('$rootScope.objMap ' + $rootScope.objMap);
         } else {
             $rootScope.objMap = [];
         }
@@ -113,14 +153,40 @@ angular.module("salesApp", ['ngRoute'])
             console.log($scope.objMap);
             $rootScope.objMap.push(temp);
             sessionStorage.objMap = JSON.stringify($rootScope.objMap);
-            console.log('sessionStorage3.objMap '+sessionStorage.objMap);
+            console.log('sessionStorage3.objMap ' + sessionStorage.objMap);
         }
 
     })
 
-    .controller('salesAttrMapper', function ($rootScope, $scope) {
+    .controller('salesAttrMapper', function ($rootScope, $scope, $q, expresSales) {
 
         var objMapp = $rootScope.objMap;
+
+        /*for (var i = 0; i < objMapp.length; i++) {
+            var temp = objMapp[i];
+            var salesTemp = temp.salesObjects[0];
+            var mongoTemp = temp.mongoObjects[0];
+            expresSales.mongoObjId().then(function (data) {
+                console.log('data is ' + JSON.stringify(data.data));
+                if (data.data[mongoTemp]) {
+                    console.log('data.data[mongoTemp] ' + data.data[mongoTemp])
+                    var p1 = expresSales.mongoObjAttr(mongoTemp, data.data[mongoTemp]);
+                    var p2 = expresSales.salesObjAttr(salesTemp);
+                    $q.all([p1, p2]).then(function (result) {
+                            console.log('after p1 and p2 is '+JSON.stringify(result));
+                        }, function (error) {
+                            console.log(error);
+                        })
+                } else {
+                    console.log('No match')
+                }
+
+                /!*var p1 = expresSales.mongoObjAttr();
+                 var p2 = expresSales.salesObjAttr();*!/
+            }, function (error) {
+
+            })
+        }*/
 
         //var objMapp = JSON.parse(sessionStorage.objMap);
 
