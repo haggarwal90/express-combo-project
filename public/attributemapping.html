@@ -22,30 +22,34 @@
                     <div class="row">
                         <td>
                             <div class="col-md-6">
-                                <select  name="mongoAtrSelect" id="mongoAtrSelect" ng-model="selectedMongoAtr" multiple>
+                                <!--<select ng-model="selectedMongoAtr" multiple>
                                     <option  ng-repeat="option1 in eModel.mongoAttributes" value="{{option1}}">{{option1}}</option>
-                                </select>
+                                </select>-->
+                                <select name= "mymselect" id="mymSelect" ng-options="mongoAttributes for mongoAttributes in eModel.mongoAttributes track by mongoAttributes" ng-model="eModel.selectedOption.selectedMongo"></select>
                             </div>
                         </td>
                         <td>
                             <div class="col-md-6">
-                                <select name="salesAtrSelect" id="salesAtrSelect" ng-model="selectedSalesAtr" multiple>
+                                <!--<select ng-model="selectedSalesAtr" multiple>
                                     <option ng-repeat="option2 in eModel.salesAttributes" value="{{option2}}">{{option2}}</option>
-                                </select>
+                                </select>-->
+                                <select name= "mysselect" id="mysSelect" ng-options="salesAttributes for salesAttributes in eModel.salesAttributes track by salesAttributes" ng-model="eModel.selectedOption.selectedSales"></select>
                             </div>
                         </td>
-                     </div>
+                    </div>
                 </tr>
                 <tr>
                     <td>
                         <!--<div class="row" style="padding-left: 15px;margin-top: -19px;margin-bottom:  19px;">-->
                             <!--<a href="#/objectattributemapping">Configure attribute mapping</a>-->
-                            <button ng-click="saveObjAtrMapping()">Save attribute mapping</button> <br>
+                            <button ng-click="saveObjAtrMapping($index)">Save attribute mapping</button> <br>
                         <!--</div>-->
+                    </td>
+                    <td>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-    <button ng-click="saveFinalMapping()">Save to DB</button> <br>
+    <button ng-click="saveFinalMapping()">Save to DB</button> <br> {{selectedSalesAtr}} {{selectedMongoAtr}}
 </div>

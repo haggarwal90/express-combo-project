@@ -4,6 +4,7 @@ var sf = require('./../lib/salesforce');
 var mongodb = require('mongodb');
 var ObjectID = mongodb.ObjectID;
 var Q = require('q');
+var fs = require('fs');
 
 /* GET home page. */
 /*
@@ -136,14 +137,29 @@ router.post('/attributes', function (req, res, next) {
           satr.push(result2[v][i].name);
         }
         body[v].salesAttributes = satr;
+        body[v].selectedOption = {
+            "selectedSales" : satr[0],
+            "selectedMongo" : matr[0]
+        }
       }
       res.status(200).send(body);
     })
   })
 
+});
 
-
-  //function
+router.post('/savemappings', function (req, res, next) {
+  var body = req.body;
+  var filePath = __dirname + '/test.txt';
+  console.log('filepath is '+filePath);
+  fs.open(filePath,'a+',function(err,fd) {
+    fs.write(fd, JSON.stringify(body) ,null,  'utf8', function() {
+      fs.close(fd, function(){
+        console.log('file closed');
+        res.status(200).send('Writting completed');
+      });
+    })
+  })
 });
 
 function getMongoObject(db, objName, objId) {

@@ -117,9 +117,42 @@ angular.module("salesApp", ['ngRoute'])
                     });
                 return deferred.promise;
 
+            },
+            saveFinalMapping: function(obj) {
+                var deferred = $q.defer();
+                var uri = "/api/savemappings/" ;
+                return $http({
+                    method: 'POST',
+                    url: uri,
+                    data: obj,
+                    headers: {'Content-Type': 'application/json'}
+                }).success(function (responce) { // responce : { data : {} , status,cpnfig,headers }
+                    //console.log('r is ' + responce);
+                    deferred.resolve(responce);
+                })
+                    .error(function (msg, code) {
+                        deferred.reject(msg);
+                    });
+                return deferred.promise;
             }
         }
     })
+
+    .directive('myheader', function () {
+        console.log('header directive called');
+        return {
+            restrict: 'A', //This menas that it will be used as an attribute and NOT as an element.
+            template: '<h3>Header</h3>'
+        };
+    })
+
+    .directive('myfooter', function () {
+        return {
+            restrict: 'A', //This menas that it will be used as an attribute and NOT as an element.
+            template: '<h3>Footer</h3>'
+        };
+    })
+
 
     .controller('salesController', function ($scope, expresSales) {
         var p = expresSales.salesmongoconfig();
@@ -179,8 +212,27 @@ angular.module("salesApp", ['ngRoute'])
     .controller('salesAttrMapper', function ($rootScope, $scope, $q, expresSales) {
 
         var objMapp = $rootScope.objMap;
-        $scope.saveObjAtrMapping = function () {
-            console.log('called saveObjAtrMapping');
+        $scope.saveObjAtrMapping = function (index) {
+
+            console.log('called saveObjAtrMapping' + index);
+            console.log('called selected' + JSON.stringify($scope.objWithAtr[0].selectedOption));
+            console.log('called selected' + JSON.stringify($scope.objWithAtr[1].selectedOption));
+            if(!$scope.objWithAtr[index].mapping) {
+                $scope.objWithAtr[index].mapping = [];
+            }
+            var mappedAtr = $scope.objWithAtr[index].selectedOption.selectedMongo + "/" + $scope.objWithAtr[index].selectedOption.selectedSales;
+            $scope.objWithAtr[index].mapping.push(mappedAtr);
+            console.log("$scope.objWithAtr[index].mapping"+ JSON.stringify($scope.objWithAtr));
+
+            /*console.log('called saveObjAtrMapping' + index);
+            console.log('called selectedMongoAtr' + selectedMongoAtr);
+            console.log('called selectedSalesAtr' + selectedSalesAtr);
+            if(!$scope.objWithAtr[index].mapping) {
+                $scope.objWithAtr[index].mapping = [];
+            }
+            var mappedAtr = selectedMongoAtr + "/" + selectedSalesAtr;
+            $scope.objWithAtr[index].mapping.push(mappedAtr);
+            console.log("$scope.objWithAtr[index].mapping"+ JSON.stringify($scope.objWithAtr))*/
             /*var temp = {};
             temp.salesObjects = $scope.selectedSalesObject;
             temp.mongoObjects = $scope.selectedMongoObject;
@@ -191,6 +243,9 @@ angular.module("salesApp", ['ngRoute'])
         }
         $scope.saveFinalMapping = function () {
             console.log('called saveFinalMapping');
+            var objWithAtr = $scope.objWithAtr;
+            expresSales.saveFinalMapping(objWithAtr)
+
             /*var temp = {};
              temp.salesObjects = $scope.selectedSalesObject;
              temp.mongoObjects = $scope.selectedMongoObject;
